@@ -21,16 +21,16 @@ shared ({ caller = _owner }) actor class Token(
 ) = this {
 
   let default_icrc1_args : ICRC1.InitArgs = {
-    name = ?"Test Token";
-    symbol = ?"TTT";
+    name = ?"anó";
+    symbol = ?"anó";
     logo = ?"data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InJlZCIvPjwvc3ZnPg==";
-    decimals = 8;
+    decimals = 6;
     fee = ?#Fixed(10000);
     minting_account = ?{
       owner = _owner;
       subaccount = null;
     };
-    max_supply = ?1100000;
+    max_supply = ?1100000000000;
     min_burn_amount = ?10000;
     max_memo = ?64;
     advanced_settings = null;
