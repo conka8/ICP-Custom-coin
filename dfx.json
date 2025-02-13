@@ -1,37 +1,45 @@
 {
-    "version": 1,
-    "canisters": {
-        
-        "token": {
-          "type": "motoko",
-          "main": "src/Token.mo",
-          "args": "-v --incremental-gc"
-        },
-        "prodtoken": {
-          "type": "motoko",
-          "gzip": true,
-          "main": "src/Token.mo",
-          "args": "--incremental-gc --release"
-        },
-        "allowlist": {
-          "type": "motoko",
-          "main": "src/examples/Allowlist.mo",
-          "args": "-v --incremental-gc"
-        },
-        "lotto": {
-          "type": "motoko",
-          "main": "src/examples/Lotto.mo",
-          "args": "-v --incremental-gc"
-        }
+  "version": 1,
+  "canisters": {
+    "icrc1_index_canister": {
+      "type": "custom",
+      "candid": "https://github.com/dfinity/ic/releases/download/ledger-suite-icrc-2024-10-17/index-ng.did",
+      "wasm": "https://github.com/dfinity/ic/releases/download/ledger-suite-icrc-2024-10-17/ic-icrc1-index-ng.wasm.gz"
     },
-    "defaults": {
-        "build": {
-            "packtool": "mops sources",
-            "args": ""
-        },
-        "replica": {
-          "subnet_type": "system"
-      }
+    "icrc1_ledger_canister": {
+      "type": "custom",
+      "candid": "https://github.com/dfinity/ic/releases/download/d4bd8c7cc0ddb5fefc22f8082cfbe546adeff3e1e0624b84d6560b714e7012cc/ledger.did",
+      "wasm": "https://github.com/dfinity/ic/releases/download/3d808fa63a3d8ebd4510c0400aa078e99a31afaa0515f0b68778f929ce4b2a46/ic-icrc1-ledger.wasm.gz"
+    },
+    "token": {
+      "type": "motoko",
+      "main": "src/Token.mo",
+      "args": "-v --incremental-gc"
+    },
+    "prodtoken": {
+      "type": "motoko",
+      "gzip": true,
+      "main": "src/Token.mo",
+      "args": "--incremental-gc --release"
+    },
+    "allowlist": {
+      "type": "motoko",
+      "main": "src/examples/Allowlist.mo",
+      "args": "-v --incremental-gc"
+    },
+    "lotto": {
+      "type": "motoko",
+      "main": "src/examples/Lotto.mo",
+      "args": "-v --incremental-gc"
     }
-    
+  },
+  "defaults": {
+    "build": {
+      "packtool": "mops sources",
+      "args": ""
+    },
+    "replica": {
+      "subnet_type": "system"
+    }
+  }
 }

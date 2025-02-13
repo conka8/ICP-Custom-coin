@@ -1,0 +1,2 @@
+token-mint:
+	dfx canister call token icrc1_transfer --network ic "(record { memo = null; created_at_time=null; from_subaccoint = null; amount = 5000000000; to = record { owner = principal \"vimxo-ka3dp-hstd6-xhxzx-lbvhs-zsnxi-ikwbd-s2bkq-dpqdh-ova73-aae\"; subaccount = null; }; fee = null })"
